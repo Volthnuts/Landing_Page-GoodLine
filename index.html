@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoodLine - Landing Page</title>
+    
+    <!-- 
+        บอกให้เว็บเบราว์เซอร์รีบเชื่อมต่อกับเซิร์ฟเวอร์หลักของ Google Fonts 
+        ทันทีที่เปิดเว็บ เพื่อให้เวลาที่ถึงจังหวะต้องดาวน์โหลดฟอนต์จริง มันจะทำได้เร็วขึ้น 
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <!--
+        ฟอนต์ของ Google จริงๆ แล้วถูกเก็บไว้ที่เซิร์ฟเวอร์อีกตัวชื่อ fonts.gstatic.com 
+        การใส่บรรทัดนี้พร้อมใส่คำว่า crossorigin เป็นการเตรียมความพร้อมให้เบราว์เซอร์
+        สามารถดาวน์โหลดไฟล์ฟอนต์ข้ามโดเมนได้อย่างปลอดภัยและรวดเร็วที่สุดครับ 
+     -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- 
+        ** ห้ามเว้นบรรทัด มันจะไม่โหลด **
+        ระบุว่าเราจะเอาฟอนต์อะไรบ้าง
+        - Plus Jakarta Sans: ฟอนต์ภาษาอังกฤษแนว Modern Tech
+        - Prompt: ฟอนต์ภาษาไทยยอดไม่มีหัว
+        display=swap : ถ้าเน็ตช้าแล้วฟอนต์ยังโหลดไม่เสร็จ ให้แสดงฟอนต์ธรรมดาในเครื่องไปก่อน
+    -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- 
+        cdn swiper
+    -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        /* ปรับแต่งสีจุดกลมๆ ด้านล่างให้เป็นสี Indigo */
+        .swiper-pagination-bullet-active {
+            background: #4f46e5 !important;
+            width: 24px !important;
+            border-radius: 4px !important;
+            transition: all 0.3s ease;
+        }
+    </style>
+
+    <link href="./output.css" rel="stylesheet">
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans">
+
+    <!-- Water Mark -->
+    <div class="fixed inset-0 z-240 pointer-events-none overflow-hidden select-none opacity-50 flex flex-wrap gap-x-24 gap-y-36 p-10 justify-center items-center content-center">
+        <div class="text-xl md:text-2xl font-bold font-sans -rotate-12 uppercase tracking-widest whitespace-nowrap">Jakgree Wannathongsuk</div>
+        <div class="text-xl md:text-2xl font-bold font-sans -rotate-12 uppercase tracking-widest whitespace-nowrap">Jakgree Wannathongsuk</div>
+        <div class="text-xl md:text-2xl font-bold font-sans -rotate-12 uppercase tracking-widest whitespace-nowrap">Jakgree Wannathongsuk</div>
+        <div class="text-xl md:text-2xl font-bold font-sans -rotate-12 uppercase tracking-widest whitespace-nowrap">Jakgree Wannathongsuk</div>
+        <div class="text-xl md:text-2xl font-bold font-sans -rotate-12 uppercase tracking-widest whitespace-nowrap">Jakgree Wannathongsuk</div>
+        <div class="text-xl md:text-2xl font-bold font-sans -rotate-12 uppercase tracking-widest whitespace-nowrap">Jakgree Wannathongsuk</div>
+        <div class="text-xl md:text-2xl font-bold font-sans -rotate-12 uppercase tracking-widest whitespace-nowrap">Jakgree Wannathongsuk</div>
+        <div class="text-xl md:text-2xl font-bold font-sans -rotate-12 uppercase tracking-widest whitespace-nowrap">Jakgree Wannathongsuk</div>
+        <div class="text-xl md:text-2xl font-bold font-sans -rotate-12 uppercase tracking-widest whitespace-nowrap">Jakgree Wannathongsuk</div>
+        <div class="text-xl md:text-2xl font-bold font-sans -rotate-12 uppercase tracking-widest whitespace-nowrap">Jakgree Wannathongsuk</div>
+        <div class="text-xl md:text-2xl font-bold font-sans -rotate-12 uppercase tracking-widest whitespace-nowrap">Jakgree Wannathongsuk</div>
+        <div class="text-xl md:text-2xl font-bold font-sans -rotate-12 uppercase tracking-widest whitespace-nowrap">Jakgree Wannathongsuk</div>
+        <div class="text-xl md:text-2xl font-bold font-sans -rotate-12 uppercase tracking-widest whitespace-nowrap">Jakgree Wannathongsuk</div>
+        <div class="text-xl md:text-2xl font-bold font-sans -rotate-12 uppercase tracking-widest whitespace-nowrap">Jakgree Wannathongsuk</div>
+        <div class="text-xl md:text-2xl font-bold font-sans -rotate-12 uppercase tracking-widest whitespace-nowrap">Jakgree Wannathongsuk</div>
+        <div class="text-xl md:text-2xl font-bold font-sans -rotate-12 uppercase tracking-widest whitespace-nowrap">Jakgree Wannathongsuk</div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm w-full">
+        <div class="h-16 flex items-center justify-between px-8 max-w-7xl mx-auto">
+            
+            <div class="flex items-center">
+                <a href="#home">
+                    <img src="./images/logo.svg" alt="GoodLine Logo" class="h-12 w-auto min-w-auto">
+                </a>
+            </div>
+
+            <button id="menu-btn" class="md:hidden p-2 text-slate-600 hover:text-indigo-600 focus:outline-none transition">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+
+            <div id="menu-links" class="hidden md:flex flex-col md:flex-row items-center font-bold text-slate-600 text-lg 
+                        absolute md:relative top-16 md:top-0 left-0 w-full md:w-auto bg-white md:bg-transparent 
+                        shadow-md md:shadow-none p-5 md:p-0 space-y-4 md:space-y-0 md:space-x-12 lg:space-x-16 border-t md:border-none border-slate-100">
+                <a href="#home" class="hover:text-indigo-600 hover:underline transition">Home</a>
+                <a href="#services" class="hover:text-indigo-600 hover:underline transition">Services</a>
+                <a href="#about" class="hover:text-indigo-600 hover:underline transition">About Us</a>
+                <a href="#contact_us" class="hover:text-indigo-600 hover:underline transition">Contact</a>
+                
+                <a href="#about" class="md:hidden bg-indigo-600 text-white px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-indigo-700 shadow-sm transition w-full text-center">
+                    Get Started
+                </a>
+            </div>
+
+            <div class="hidden md:flex text-lg font-semibold text-white justify-end">
+                <a href="#contact_us" class="bg-indigo-600 px-5 py-2.5 rounded-xl hover:bg-indigo-700 shadow-sm shadow-indigo-100 transition">
+                    Get Started
+                </a>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Home -->
+    <section id="home" class="relative w-full h-[65vh] md:h-screen overflow-hidden bg-slate-900">  
+        <div class="swiper mySwiper w-full h-full">
+            <div class="swiper-wrapper">
+                
+                <div class="swiper-slide relative w-full h-full">
+                    <img src="./images/home-1.jpg" alt="GoodLine Home-1" title="ID 364403034 © Serhii Milekhin | Dreamstime.com" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-slate-950/50 z-10"></div>
+                    
+                    <div class="absolute inset-0 z-20 flex items-center px-8 sm:px-16 md:px-24 max-w-7xl mx-auto">
+                        <div class="max-w-3xl text-left">
+                            <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight mb-4 font-sans">
+                                Digital Transformation <br>
+                                <span class="text-emerald-400">for Smarter Workflow</span>
+                            </h1>
+                            <p class="text-base sm:text-lg md:text-xl text-slate-200 mb-8 font-light tracking-wide">
+                                Streamline. Optimize. Succeed.
+                            </p>
+                            <a href="#services" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-indigo-700 transition shadow-lg shadow-indigo-600/30 text-sm md:text-base">
+                                Explore Solutions
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="swiper-slide relative w-full h-full">
+                    <img src="./images/home-2.jpg" alt="GoodLine Home-2" title="ID 114192898 © Bluebay2014 | Dreamstime.com" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-slate-950/50 z-10"></div>
+                    
+                    <div class="absolute inset-0 z-20 flex items-center px-8 sm:px-16 md:px-24 max-w-7xl mx-auto">
+                        <div class="max-w-3xl text-left">
+                            <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight mb-4 font-sans">
+                                Empower Your Business <br>
+                                <span class="text-indigo-400">with Data Services</span>
+                            </h1>
+                            <p class="text-base sm:text-lg md:text-xl text-slate-200 mb-8 font-light tracking-wide">
+                                Add on Solutions - Up on your business.
+                            </p>
+                            <a href="#about" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-indigo-700 transition shadow-lg shadow-indigo-600/30 text-sm md:text-base">
+                                Learn About Us
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="swiper-slide relative w-full h-full">
+                    <img src="./images/home-3.jpg" alt="GoodLine Home-3" title="ID 364403034 © Serhii Milekhin | Dreamstime.com" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-slate-950/50 z-10"></div>
+                    
+                    <div class="absolute inset-0 z-20 flex items-center px-8 sm:px-16 md:px-24 max-w-7xl mx-auto">
+                        <div class="max-w-3xl text-left">
+                            <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight mb-4 font-sans">
+                                Automate Repetitive <br>
+                                <span class="text-emerald-400">Tasks Effortlessly</span>
+                            </h1>
+                            <p class="text-base sm:text-lg md:text-xl text-slate-200 mb-8 font-light tracking-wide">
+                                Maximize efficiency and scale your operations smoothly.
+                            </p>
+                            <a href="#contact_us" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-indigo-700 transition shadow-lg shadow-indigo-600/30 text-sm md:text-base">
+                                Get in Touch
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="swiper-button-next text-white! opacity-40 hover:opacity-100 transition !z-30"></div>
+            <div class="swiper-button-prev text-white! opacity-40 hover:opacity-100 transition !z-30"></div>
+            
+            <div class="swiper-pagination z-30!"></div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">Our Services</h2>
+                <p class="text-lg text-slate-600">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga ex sequi enim, 
+                    assumenda laudantium distinctio maiores harum, nihil eveniet placeat similique 
+                    autem tempora, repudiandae vel voluptatem! Minus illum asperiores modi.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">Data Management</h3>
+                        <p class="text-slate-600 leading-relaxed text-sm">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque corporis quibusdam doloribus? Aspernatur unde consequuntur tempore aut aperiam quia.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">Workflow Automation</h3>
+                        <p class="text-slate-600 leading-relaxed text-sm">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque corporis quibusdam doloribus? Aspernatur unde consequuntur tempore aut aperiam quia.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">Smart Solutions</h3>
+                        <p class="text-slate-600 leading-relaxed text-sm">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque corporis quibusdam doloribus? Aspernatur unde consequuntur tempore aut aperiam quia.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="text-indigo-600 font-bold uppercase tracking-wider text-sm">About Us</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mt-2 mb-6">Lorem ipsum dolor sit amet.</h2>
+                <p class="text-slate-600 leading-relaxed mb-6">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet laboriosam ipsa perspiciatis, quo facilis expedita nulla, voluptate ut tenetur eaque sed quasi doloremque optio nam eligendi aliquam, officiis id quos.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="text-indigo-600 shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                            </svg>
+                        </div>
+                        <p class="text-slate-700 font-medium text-sm leading-none">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="text-indigo-600 shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                            </svg>
+                        </div>
+                        <p class="text-slate-700 font-medium text-sm leading-none">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative h-100 rounded-2xl overflow-hidden shadow-lg bg-slate-100">
+                <img src="./images/home-2.jpg" alt="About GoodLine" title="ID 114192898 © Bluebay2014 | Dreamstime.com" class="w-full h-full object-cover">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact_us" class="py-20 bg-slate-900 text-white ">
+        <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div>
+                <h2 class="text-3xl font-extrabold tracking-tight mb-4">Contact Us</h2>
+                <p class="text-slate-400 mb-8 max-w-md">                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet laboriosam ipsa perspiciatis, quo facilis expedita nulla, voluptate ut tenetur eaque sed quasi doloremque optio nam eligendi aliquam, officiis id quos.</p>
+                
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center text-indigo-400"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg></div>
+                        <span class="text-slate-300">contact@goodline.com</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center text-indigo-400"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg></div>
+                        <span class="text-slate-300">www.goodline.com</span>
+                    </div>
+                </div>
+            </div>
+
+            <form class="bg-slate-800 p-8 rounded-2xl space-y-4 shadow-xl">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Name</label>
+                    <input type="text" class="w-full bg-slate-700/50 border border-slate-600 rounded-xl px-4 py-3 text-white placeholder-slate-400 focus:outline-none focus:border-indigo-500 transition text-sm" placeholder="Your Name">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Email</label>
+                    <input type="email" class="w-full bg-slate-700/50 border border-slate-600 rounded-xl px-4 py-3 text-white placeholder-slate-400 focus:outline-none focus:border-indigo-500 transition text-sm" placeholder="your@email.com">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Message</label>
+                    <textarea rows="4" class="w-full bg-slate-700/50 border border-slate-600 rounded-xl px-4 py-3 text-white placeholder-slate-400 focus:outline-none focus:border-indigo-500 transition text-sm" placeholder="Tell us about your project..."></textarea>
+                </div>
+                <button type="button" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-xl shadow-md transition">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./app.js"></script>
+</body>
+
+</body>
+</html>
+

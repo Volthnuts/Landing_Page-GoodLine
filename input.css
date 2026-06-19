@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+/* สำหรับ Tailwind v4 ประกาศธีมฟอนต์แบบนี้ */
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Prompt", sans-serif;
+}
