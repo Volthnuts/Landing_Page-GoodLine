@@ -49,8 +49,51 @@ function initSwiper() {
     }
 }
 
-// รอให้เบราว์เซอร์อ่านโครงสร้าง Static HTML ทั้งหมดเสร็จสิ้นก่อน ค่อยปลุกให้สคริปต์ทำงาน
+function initServicesAnimation() {
+    const cards = document.querySelectorAll('.service-card');
+    if (cards.length === 0) return;
+
+    function resetCards() {
+        cards.forEach(card => {
+            card.classList.add('opacity-0', 'translate-y-16');
+            card.classList.remove('opacity-100', 'translate-y-0');
+        });
+    }
+
+    function animateCards() {
+        cards.forEach((card, index) => {
+            setTimeout(() => {
+                card.classList.remove('opacity-0', 'translate-y-16');
+                card.classList.add('opacity-100', 'translate-y-0');
+            }, index * 300);
+        });
+    }
+
+    const servicesSection = document.getElementById('services');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                resetCards();
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        animateCards();
+                    });
+                });
+            } else {
+                resetCards();
+            }
+        });
+    }, { threshold: 0.1 });
+
+    if (servicesSection) {
+        observer.observe(servicesSection);
+    }
+}
+
+// แก้ไขด้านล่างสุดของไฟล์ app.js เพื่อเรียกใช้ฟังก์ชันใหม่
 document.addEventListener('DOMContentLoaded', () => {
     initHamburgerMenu();
     initSwiper();
+    initServicesAnimation(); // เรียกใช้งานที่นี่
 });
