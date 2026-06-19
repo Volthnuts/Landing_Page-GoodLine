@@ -1,5 +1,6 @@
 // ฟังก์ชันจัดการระบบเมนูมือถือ (Hamburger Menu)
 function initHamburgerMenu() {
+    console.log(window.matchMedia('(prefers-reduced-motion: reduce)').matches);
     const menuBtn = document.getElementById('menu-btn');
     const menuLinks = document.getElementById('menu-links');
 

@@ -272,6 +272,9 @@
   .top-16 {
     top: calc(var(--spacing) * 16);
   }
+  .top-24 {
+    top: calc(var(--spacing) * 24);
+  }
   .top-20 {
     top: calc(var(--spacing) * 20);
   }
@@ -751,6 +754,9 @@
   }
   .scroll-smooth {
     scroll-behavior: smooth;
+  }
+  .scroll-mt-24 {
+    scroll-margin-top: calc(var(--spacing) * 24) /* 6rem = 96px */;
   }
   .rounded {
     border-radius: 0.25rem;
