@@ -18,7 +18,6 @@ function initHamburgerMenu() {
                 menuLinks.classList.remove('flex');
             });
         });
-        console.log("📱 ระบบเมนูมือถือเปิดสวิตช์พร้อมใช้งาน");
     }
 }
 
@@ -43,9 +42,9 @@ function initSwiper() {
                 prevEl: ".swiper-button-prev",
             },
         });
-        console.log("🎡 ระบบสไลด์ Swiper เริ่มทำงานสมบูรณ์แบบ!");
+        // console.log("🎡 ระบบสไลด์ Swiper เริ่มทำงานสมบูรณ์แบบ!");
     } else {
-        console.warn("⚠️ ไม่พบโครงสร้างสไลด์ .mySwiper บนหน้าเว็บนี้");
+        // console.warn("⚠️ ไม่พบโครงสร้างสไลด์ .mySwiper บนหน้าเว็บนี้");
     }
 }
 
